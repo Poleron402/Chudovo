@@ -1,15 +1,18 @@
 # Chudovo (Personal project)
 ## Chudovo is an informational full-stack crypto application, which allows you to look up minimal crypto stats and save favorite coins to your watchlist
 Chudovo will implement
-* Login/SignIn/Logout functionality
+* Login/SignUp/Logout functionality
 * Use of two 3d party apis
 * One backend api for data storage
 
---- Technologies
+## Technologies
 The frameworks that will be used for this project
 * ReactJS
 * Django
 * Postresql
 * Bootstrap
+<br></br>
 *Considering:*
-*SASS for learning purposes
+<br></br>
+* SASS for learning purposes
+* Tailwind
