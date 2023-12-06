@@ -5,3 +5,11 @@ Chudovo will implement
 * Use of two 3d party apis
 * One backend api for data storage
 
+--- Technologies
+The frameworks that will be used for this project
+* ReactJS
+* Django
+* Postresql
+* Bootstrap
+*Considering:*
+*SASS for learning purposes
