@@ -16,7 +16,6 @@ function App() {
     if(token){
         axios.defaults.headers.common['Authorization'] = `Token ${token}`;
         let response = await axios.get("http://127.0.0.1:8000/api/v1/users/info/")
-        // let response = await axios.get
         setUser(response.data)
     }
     else{

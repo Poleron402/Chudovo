@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
+import { Link } from "react-router-dom"
 import { userContext } from "../App"
 
 export const LoginPage=()=>{
@@ -26,13 +27,14 @@ export const LoginPage=()=>{
         console.log(token)
     }
     return(
-        <>
-        <form onSubmit={(e)=>logIn(e)} className = "main">
+        <div className="main">
+        <h1 className="title">Welcome back</h1>
+        <form onSubmit={(e)=>logIn(e)} >
             <input className ="myinput" type="text" value = {username} placeholder="username" onChange={(e)=>setUsername(e.target.value)}></input><br></br>
             <input className ="myinput" type="password" value = {pw} placeholder="password" onChange={(e)=>setPw(e.target.value)}></input><br></br>
             <input id = "submitbtn" type="submit" value="Log in"></input>
         </form>
-
-        </>
+            <p>Dont have an account? <Link to="/signup">Sign Up!</Link></p>
+        </div>
     )
 }

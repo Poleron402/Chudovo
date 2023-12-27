@@ -12,7 +12,7 @@ export const MyNav = ({user, setUser})=>{
                 <Link className='mylink space-x-4' to="/watchlist">Watchlist</Link>
                 {!user &&
                 (<><Link className='mylink' to="/login">Login</Link>
-                <Link className='mylink' to="/signup">Signup</Link></>)
+                </>)
                 }   
                 </div>
         </nav>

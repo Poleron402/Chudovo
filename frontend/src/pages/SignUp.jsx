@@ -2,7 +2,7 @@ import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { userContext } from "../App"
-
+import { Link } from "react-router-dom"
 export const SignUp=()=>{
     const [username, setUsername] = useState("")
     const [pw, setPw] = useState("")
@@ -28,17 +28,18 @@ export const SignUp=()=>{
     }
     return (
         <>
-        <h1 className="main">Welcome</h1>
+        <div className = "main">
+        <h1 className="title">Welcome</h1>
 
-        <form onSubmit={(e)=>signUp(e)} className = "main">
-            <label for="1">Email</label>
-            <input className ="myinput" id= "1" type="text" value = {username} placeholder="janedoe@eample.com" onChange={(e)=>setUsername(e.target.value)}></input><br></br>
-            <label for="2">Password</label>
-            <input className ="myinput" id="2" type="password" value = {pw} placeholder="password" onChange={(e)=>setPw(e.target.value)}></input><br></br>
-            <label for="3">Re-enter password</label>
-            <input className ="myinput" id="3" type="password" value = {pw2} placeholder="password" onChange={(e)=>setPw2(e.target.value)}></input><br></br>
+        <form onSubmit={(e)=>signUp(e)} >   
+            <input className ="myinput Email" id= "Email" type="text" value = {username} placeholder="Email" onChange={(e)=>setUsername(e.target.value)}></input><br></br>
+            <input className ="myinput password" type="password" value = {pw} placeholder="Password" onChange={(e)=>setPw(e.target.value)}></input><br></br>
+            <input className ="myinput password" type="password" value = {pw2} placeholder="Repeat Password" onChange={(e)=>setPw2(e.target.value)}></input><br></br>
             <input id = "submitbtn" type="submit" value="SignUp"></input>
+            
         </form>
+        <p>Already have an account? <Link to="/login">Log in!</Link></p>
+        </div> 
         </>
     )
 }

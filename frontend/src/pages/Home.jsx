@@ -42,13 +42,13 @@ export const Home = ()=>{
   useEffect(()=>{
     getTheList()
   }, [])
-    // useEffect(()=>{
-    //   getAbout()
-    // }, [data])
+    useEffect(()=>{
+      getAbout()
+    }, [data])
     // useEffect(()=>{
     //   const intervalId = setInterval(() => {
     //     getCoin()
-    //   }, 4000);
+    //   }, 10000);
     //   return () => {
     //     clearInterval(intervalId);
     //   };

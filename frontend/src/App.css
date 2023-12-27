@@ -1,13 +1,14 @@
 @import './index.css';
 body, html{
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
   background: rgb(0,0,0);
   background: linear-gradient(156deg, rgba(0,0,0,1) 1%, rgba(51,23,51,1) 47%, rgba(8,81,96,1) 100%);
 }
 .title{
   color: rgb(140, 140, 158);
 }
+
 .main{
   display: flex;
   color: rgb(140, 140, 158);
@@ -16,6 +17,7 @@ body, html{
   justify-content: center;
   text-align: center;
 }
+
 #mynav{
   position: sticky;
   background-color: transparent;
@@ -37,7 +39,8 @@ body, html{
   text-decoration: none;
   color:rgb(140, 140, 158);
   font-size: 25px;
-  padding-left: 30px;
+  padding-inline: 12px;
+
 }
 #mylink{
   text-decoration: none;
@@ -45,14 +48,17 @@ body, html{
   font-size: 25px;
   position: absolute;
   left: 20px;
-
 }
 .mylink:hover{
   color: beige;
+  background-color: rgba(0, 0, 0, 0.573);
+  padding-inline: 12px;
 }
 .myinput{
   padding: 10px;
-  width: 400px;
+  width: 60vmin;
+  margin-top: 20px;
+  box-sizing: border-box;
   border-style: none;
   outline: none;
   border-left: 3px solid ;
@@ -60,7 +66,7 @@ body, html{
   background-color: #3e4b586c;
   border-image: linear-gradient(30deg, rgba(64,205,233,1) 30%, rgba(109,9,111,1) 46% , rgba(155,71,157,1) 80%);
   border-image-slice: 1;
-
+  max-width: 100%;
 }
 label{
   justify-content: left;
@@ -97,10 +103,11 @@ label{
 #submitbtn{
   margin: 8px;
   padding: 8px;
-  width: 80px;
-  background-color: rgb(197, 147, 219);
+  width: 300px;
+  color:aliceblue;
+  background-color: rgba(19, 4, 15, 0.629);
   border-style: none;
-  border-radius: 30px;
+
 }
 #infodion{
   color: rgb(181, 121, 166);
@@ -112,8 +119,8 @@ label{
 }
 
 #submitbtn:hover{
-  background-color: rgb(166, 34, 222);
-  color: rgb(233, 183, 233);
+  background-color: rgba(34, 216, 222, 0.649);
+  color: rgb(42, 13, 42);
 }
 #myspin{
   margin-bottom: 40px;

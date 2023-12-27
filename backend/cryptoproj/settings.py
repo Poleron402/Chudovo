@@ -28,7 +28,7 @@ DEBUG = False
 # This used to be empty
 ALLOWED_HOSTS = ["*"]
 # This used to not be here
-CSRF_TRUSTED_ORIGINS = [""]
+# CSRF_TRUSTED_ORIGINS = [""]
 
 # Application definition
 
