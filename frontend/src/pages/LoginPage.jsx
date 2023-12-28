@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import { Link } from "react-router-dom"
 import { userContext } from "../App"
+import img from "../assets/img.png"
 
 export const LoginPage=()=>{
     
@@ -35,6 +36,7 @@ export const LoginPage=()=>{
             <input id = "submitbtn" type="submit" value="Log in"></input>
         </form>
             <p>Dont have an account? <Link to="/signup">Sign Up!</Link></p>
+            <img src={img} width={300}></img>
         </div>
     )
 }

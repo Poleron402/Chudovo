@@ -1,7 +1,7 @@
 @import './index.css';
 body, html{
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
   background: rgb(0,0,0);
   background: linear-gradient(156deg, rgba(0,0,0,1) 1%, rgba(51,23,51,1) 47%, rgba(8,81,96,1) 100%);
 }
@@ -107,15 +107,17 @@ label{
   color:aliceblue;
   background-color: rgba(19, 4, 15, 0.629);
   border-style: none;
-
+  max-width: 60vmin;
 }
 #infodion{
   color: rgb(181, 121, 166);
   background-color: rgb(76, 43, 81);
   border: none;
+  
   margin-inline: 60px;
   margin-bottom: 50px;
   margin-top: -50px;
+  box-sizing: border-box;
 }
 
 #submitbtn:hover{
