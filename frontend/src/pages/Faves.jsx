@@ -44,14 +44,7 @@ export const Faves=()=>{
     //       }
     //     }
     //   }
-    //   useEffect(()=>{
-    //     const intervalId = setInterval(() => {
-    //       getCoin()
-    //     }, 4000);
-    //     return () => {
-    //       clearInterval(intervalId);
-    //     };
-    //   }, [])
+
     const removeCard = (rmCard)=>{
         myList((prevCards) => prevCards.filter((card)=>card.name !==rmCard))
       }

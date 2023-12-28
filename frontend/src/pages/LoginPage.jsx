@@ -23,7 +23,7 @@ export const LoginPage=()=>{
         localStorage.setItem("token", token)
         axios.defaults.headers.common["Authorization"] = `Token ${token}`
         setUser(user)
-        navigate("/watchlist", {replace:true})
+        navigate("/", {replace:true})
         console.log(user)
         console.log(token)
     }
