@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import './App.css'
-import { api } from "../utilities";
+import { api } from './utilities'
 import { MyNav } from './components/MyNav'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect, createContext } from 'react'
