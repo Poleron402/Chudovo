@@ -5,7 +5,7 @@ from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST
 import requests
 from openai import OpenAI
 from cryptoproj.settings import env
-client = OpenAI(api_key=env.get("API_KEY"))
+client = OpenAI(api_key=env.get("OPENAI_API_KEY"))
 # Create your views here.
 class PromptView(APIView):
     def get(self, request, crypto):
