@@ -26,6 +26,7 @@ class Login(APIView):
         if user:
             token, created = Token.objects.get_or_create(user = user)
             return Response({"token": token.key, "user": user.email}, status=HTTP_200_OK)
+        return Response("Something went wrong", HTTP_404_NOT_FOUND)
 class Logout(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
