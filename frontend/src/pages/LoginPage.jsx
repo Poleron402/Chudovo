@@ -17,7 +17,7 @@ export const LoginPage=()=>{
             email: username,
             password: pw
         }
-        let response= await axios.post("http://18.117.71.121/api/v1/users/login/", data)
+        let response= await axios.post("http://127.0.0.1:8000/api/v1/users/login/", data)
         let user = response.data.user
         let token = response.data.token
         localStorage.setItem("token", token)
