@@ -9,7 +9,8 @@ from dotenv import load_dotenv
 
 import os
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
-client = OpenAI(api_key=OPENAI_API_KEY)
+api_key = OPENAI_API_KEY 
+client = OpenAI(api_key)
 # Create your views here.
 class PromptView(APIView):
     def get(self, request, crypto):
