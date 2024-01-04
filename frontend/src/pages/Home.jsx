@@ -1,4 +1,5 @@
-import axios from "axios"
+import { api } from "../utilities";
+import axios from "axios";
 import { MyCard } from '../components/MyCard'
 import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
@@ -27,15 +28,15 @@ export const Home = ()=>{
       }
     }
     const getAbout = async()=>{
-      let response = await axios(`http://127.0.0.1:8000/api/v1/prompt/${data.data.id}`)
+      let response = await api(`v1/prompt/${data.data.id}`)
       setAbout(response.data[1][1][0][2][1][0][1])
       console.log(response.data)
     }
     const getTheList = async()=>{
       let token = localStorage.getItem("token")
       if(token){
-          axios.defaults.headers.common['Authorization'] = `Token ${token}`;
-          let response = await axios.get("http://127.0.0.1:8000/api/v1/watchlist/")
+          api.defaults.headers.common['Authorization'] = `Token ${token}`;
+          let response = await api.get("v1/watchlist/")
           myList(response.data["My Coins"])
       }
   }

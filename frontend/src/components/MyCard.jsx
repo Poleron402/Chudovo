@@ -3,6 +3,7 @@ import { useState, useEffect} from "react";
 import { useOutletContext } from "react-router-dom";
 import { userContext } from "../App";
 import axios from "axios";
+import { api } from "../utilities";
 
 export const MyCard = ({data, list, myList})=>{
     
@@ -17,13 +18,13 @@ export const MyCard = ({data, list, myList})=>{
     const addRemove = async()=>{
         if (token){
             if(liked === true){
-                axios.defaults.headers.common['Authorization'] = `Token ${token}`;
-                let response = await axios.delete(`http://127.0.0.1:8000/api/v1/coin/rm/${data.id}`)
+                api.defaults.headers.common['Authorization'] = `Token ${token}`;
+                let response = await api.delete(`v1/coin/rm/${data.id}`)
                 console.log("Coin deleted")
                 setLiked(false)
             }else{
-                axios.defaults.headers.common['Authorization'] = `Token ${token}`;
-                let response = await axios.post(`http://127.0.0.1:8000/api/v1/coin/`, mydata)
+                api.defaults.headers.common['Authorization'] = `Token ${token}`;
+                let response = await api.post(`v1/coin/`, mydata)
                 console.log("Coin added")
                 setLiked(true)
             }

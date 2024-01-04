@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import axios from "axios"
+import { api } from "../utilities";
 import { userContext } from "../App"
 import { Link } from "react-router-dom"
 export const SignUp=()=>{
@@ -16,10 +16,10 @@ export const SignUp=()=>{
                 email: username,
                 password: pw
             }
-            let response=await axios.post("http://127.0.0.1:8000/api/v1/users/signup/", data)
+            let response=await api.post("v1/users/signup/", data)
             let user = response.data.user
             let token = response.data.token
-            axios.defaults.headers.common["Authorization"] = `Token ${token}`
+            api.defaults.headers.common["Authorization"] = `Token ${token}`
             setUser(user)
             navigate("/watchlist", {replace: true})
         }else{

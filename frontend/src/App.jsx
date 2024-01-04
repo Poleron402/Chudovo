@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import './App.css'
-import axios from "axios"
+import { api } from "../utilities";
 import { MyNav } from './components/MyNav'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect, createContext } from 'react'
@@ -14,8 +14,8 @@ function App() {
   const whoAmI = async()=>{
     let token = localStorage.getItem("token")
     if(token){
-        axios.defaults.headers.common['Authorization'] = `Token ${token}`;
-        let response = await axios.get("http://127.0.0.1:8000/api/v1/users/info/")
+        api.defaults.headers.common['Authorization'] = `Token ${token}`;
+        let response = await api.get("v1/users/info/")
         setUser(response.data)
     }
     else{

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import axios from "axios"
+import { api } from "../utilities"
 import { Link } from "react-router-dom"
 import { userContext } from "../App"
 import img from "../assets/img.png"
@@ -17,11 +17,11 @@ export const LoginPage=()=>{
             email: username,
             password: pw
         }
-        let response= await axios.post("http://127.0.0.1:8000/api/v1/users/login/", data)
+        let response= await api.post("v1/users/login/", data)
         let user = response.data.user
         let token = response.data.token
         localStorage.setItem("token", token)
-        axios.defaults.headers.common["Authorization"] = `Token ${token}`
+        api.defaults.headers.common["Authorization"] = `Token ${token}`
         setUser(user)
         navigate("/", {replace:true})
         console.log(user)

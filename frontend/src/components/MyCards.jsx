@@ -2,12 +2,12 @@ import { Card, Button} from "react-bootstrap";
 import { useState, useEffect, useContext } from "react";
 import { useOutletContext } from "react-router-dom";
 import { userContext } from "../App";
-import axios from "axios"
+import { api } from "../utilities";
 export const MyCards = ({data, rmCard})=>{
     const {user, setUser} = useContext(userContext)
     const onClickHandler = async(e)=>{
         try {
-            let response = await axios.delete(`http://127.0.0.1:8000/api/v1/coin/rm/${data.name}`);
+            let response = await api.delete(`v1/coin/rm/${data.name}`);
             console.log("Post response:", response.data);
             rmCard(data.name)
             // Handle success, update state, etc.

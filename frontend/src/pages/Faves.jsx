@@ -1,7 +1,7 @@
 import { useOutletContext, useNavigate, useLocation} from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
 import {userContext} from "../App"
-import axios from "axios"
+import { api } from "../utilities";
 import { Row} from "react-bootstrap";
 import { MyCards } from "../components/MyCards";
 import stacks from "../assets/stacks.gif"
@@ -13,8 +13,8 @@ export const Faves=()=>{
     let token = localStorage.getItem("token")
     const getFaves=async()=>{   
         if (token){
-        axios.defaults.headers.common['Authorization'] = `Token ${token}`;
-        let response = await axios.get("http://127.0.0.1:8000/api/v1/watchlist/")
+        api.defaults.headers.common['Authorization'] = `Token ${token}`;
+        let response = await api.get("v1/watchlist/")
         myList(response.data['My Coins'])
         console.log(list)
         }else{
@@ -22,10 +22,10 @@ export const Faves=()=>{
         }
     }
     const logOut = async() =>{
-        let response = await axios.post("http://127.0.0.1:8000/api/v1/users/logout/")
+        let response = await api.post("v1/users/logout/")
         if(response.status === 204){
             localStorage.removeItem("token");
-            delete axios.defaults.headers.common["Authorization"];
+            delete api.defaults.headers.common["Authorization"];
             setUser(null);
             navigate("/login", {replace: true})
         }
