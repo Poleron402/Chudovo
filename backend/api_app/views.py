@@ -4,11 +4,13 @@ from rest_framework.response import Response
 from rest_framework.status import HTTP_201_CREATED, HTTP_400_BAD_REQUEST
 import requests
 from openai import OpenAI
+import openai
 from cryptoproj.settings import env
 from dotenv import load_dotenv
 
 import os
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+openai.api_key = OPENAI_API_KEY
 client = OpenAI(api_key=OPENAI_API_KEY)
 # Create your views here.
 class PromptView(APIView):
