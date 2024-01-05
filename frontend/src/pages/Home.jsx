@@ -9,7 +9,7 @@ export const Home = ()=>{
     const {list, myList} = useOutletContext()
     const [coin, setCoin] = useState(undefined)
     const [data, setData] = useState(null)
-    const [about, setAbout] = useState("")
+    const [about, setAbout] = useState(undefined)
     const onSubmitHandler = (e)=>{
       e.preventDefault()
       getCoin()
@@ -46,14 +46,6 @@ export const Home = ()=>{
     useEffect(()=>{
       getAbout()
     }, [data])
-    // useEffect(()=>{
-    //   const intervalId = setInterval(() => {
-    //     getCoin()
-    //   }, 10000);
-    //   return () => {
-    //     clearInterval(intervalId);
-    //   };
-    // }, [coin])
     
     return (
       <div className="main">

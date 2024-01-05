@@ -28,7 +28,8 @@ export const SignUp=()=>{
     }
     return (
         <>
-        <div className = "main">
+        <div className="loginsignup">
+        <div className="mainls">
         <h1 className="title">Welcome</h1>
 
         <form onSubmit={(e)=>signUp(e)} >   
@@ -40,6 +41,7 @@ export const SignUp=()=>{
         </form>
         <p>Already have an account? <Link to="/login">Log in!</Link></p>
         </div> 
+        </div>
         </>
     )
 }

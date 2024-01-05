@@ -28,7 +28,8 @@ export const LoginPage=()=>{
         console.log(token)
     }
     return(
-        <div className="main">
+        <div className="loginsignup">
+        <div className="mainls">
         <h1 className="title">Welcome back</h1>
         <form onSubmit={(e)=>logIn(e)} >
             <input className ="myinput" type="text" value = {username} placeholder="username" onChange={(e)=>setUsername(e.target.value)}></input><br></br>
@@ -37,6 +38,7 @@ export const LoginPage=()=>{
         </form>
             <p>Dont have an account? <Link to="/signup">Sign Up!</Link></p>
             <img src={img} width={300}></img>
+        </div>
         </div>
     )
 }
