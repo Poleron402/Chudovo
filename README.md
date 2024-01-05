@@ -27,10 +27,10 @@ Create a `.env` file in the root of your project and add the following environme
 
 ```env
 # Django Secret Key
-DJANGO_SECRET_KEY=your_django_secret_key_here
+SECRET_KEY=your_django_secret_key_here
 
 # API Key
-API_KEY=your_api_key_here
+OPENAI_API_KEY=your_api_key_here
 (This project uses OpenAI API, but if you don't have a key, it will not affect much functionality. The API is used to get info about certain cryptocurrency after querying it in the search on main page.)
 ```
 
