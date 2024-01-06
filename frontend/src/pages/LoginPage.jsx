@@ -4,7 +4,8 @@ import { api } from "../utilities"
 import { Link } from "react-router-dom"
 import { userContext } from "../App"
 import img from "../assets/img.png"
-
+import usr from "../assets/user.svg"
+import pwd from '../assets/pw.svg'
 export const LoginPage=()=>{
     
     const [username, setUsername] = useState("")
@@ -32,7 +33,9 @@ export const LoginPage=()=>{
         <div className="mainls">
         <h1 className="title">Welcome back</h1>
         <form onSubmit={(e)=>logIn(e)} >
+            <img className="icons" src={usr} width={22}/>
             <input className ="myinput" type="text" value = {username} placeholder="username" onChange={(e)=>setUsername(e.target.value)}></input><br></br>
+            <img className="icons" src={pwd} width={22}/>
             <input className ="myinput" type="password" value = {pw} placeholder="password" onChange={(e)=>setPw(e.target.value)}></input><br></br>
             <input id = "submitbtn" type="submit" value="Log in"></input>
         </form>

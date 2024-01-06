@@ -7,7 +7,7 @@ export const MyNav = ({user, setUser})=>{
     <>
         <nav id = "mynav" >
 
-                <Link id='mylink' to="/" >✨Chudovo✨</Link>
+                <Link id='mylink' to="/" >✨ChudovoCoin✨</Link>
                 <div className = "navright">
                 <Link className='mylink space-x-4' to="/watchlist">Watchlist</Link>
                 {!user &&
